@@ -65,6 +65,25 @@ class TestCircuitConfiguration:
         assert circuit.comfort_param == "288"  # Circuit2ComfortTemp
         assert circuit.eco_param == "289"  # Circuit2EcoTemp
 
+    def test_circuit_3_parameters(self) -> None:
+        """Test Circuit 3 has correct parameter IDs.
+
+        Regression test: params 373/374/375 are device info (UID/Name/clientId),
+        not heating curve params. Curve params are at 895/896/897 and room
+        temperature correction is at 902, not 380 (WiFi signal strength).
+        """
+        circuit = CIRCUITS[3]
+        assert circuit.active_param == "901"   # Circuit3active
+        assert circuit.name_param == "900"     # Circuit3name
+        assert circuit.work_state_param == "336"   # Circuit3WorkState
+        assert circuit.thermostat_param == "899"   # Circuit3thermostatTemp
+        assert circuit.comfort_param == "338"  # Circuit3ComfortTemp
+        assert circuit.eco_param == "339"      # Circuit3EcoTemp
+        assert circuit.curve_radiator_param == "895"   # Circuit3CurveRadiator (not 373=UID)
+        assert circuit.curve_floor_param == "896"      # Circuit3CurveFloor (not 374=device name)
+        assert circuit.curve_shift_param == "897"      # Circuit3Curveshift (not 375=clientId)
+        assert circuit.room_temp_correction_param == "902"  # Circuit3userCor (not 380=WiFi signal)
+
 
 class TestAsyncSetupEntry:
     """Test async_setup_entry function."""
