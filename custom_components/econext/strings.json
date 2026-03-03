@@ -75,7 +75,8 @@
                 "name": "Flap valve state",
                 "state": {
                     "ch": "Central Heating",
-                    "dhw": "Domestic Hot Water"
+                    "dhw": "Domestic Hot Water",
+                    "unknown": "Unknown"
                 }
             },
             "wifi_ssid": {
@@ -101,7 +102,8 @@
                 "state": {
                     "summer": "Summer",
                     "winter": "Winter",
-                    "auto": "Auto"
+                    "auto": "Auto",
+                    "unknown": "Unknown"
                 }
             },
             "work_state_3": {
@@ -132,7 +134,8 @@
                 "name": "Active preset mode",
                 "state": {
                     "eco": "Eco",
-                    "comfort": "Comfort"
+                    "comfort": "Comfort",
+                    "unknown": "Unknown"
                 }
             },
             "hdw_schedule_sunday_decoded": {
@@ -179,7 +182,8 @@
                 "state": {
                     "standby": "Standby",
                     "heating": "Heating",
-                    "cooling": "Cooling"
+                    "cooling": "Cooling",
+                    "unknown": "Unknown"
                 }
             },
             "flow_temperature": {
